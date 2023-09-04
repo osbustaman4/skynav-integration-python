@@ -1,0 +1,11 @@
+*.pyc
+*.xlsx
+*.pdf
+*.docs
+*.log
+
+.env
+
+env
+.vscode
+__pycache__

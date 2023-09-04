@@ -1,0 +1,540 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "Code With Prince",
+        "version": "1.0.0",
+        "title": "Documentación Apis GPSimple",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+
+    "tags": [
+        {
+            "name": "CarCloud APIs",
+            "description": ""
+        }
+    ],
+
+    "servers": [
+        {
+            "url": "/"
+        }
+    ],
+
+    "security": [
+        {
+            "basicAuth": []
+        }
+    ],
+
+    "components": {
+        "securitySchemes": {
+            "basicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        },
+        "schemas": {
+            "TodoList": {
+                "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "Id":{
+                    "type" : "integer",
+                    "properties" : {
+                        "name" : {
+                            "type" : "integer"
+                        }
+                    }
+                },
+                "update":{
+                    "type": "object",
+                    "properties" :{
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "completed": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+
+    "paths": {
+        "/get-patent-information": {
+            "post": {
+                "tags": [""],
+                "summary": "Resumen de la operación POST para /get-patent-information",
+                "requestBody": {
+                    "description": "Para la busqueda de un vehiculo se debe enviar la patente, la variable es 'patent', lo que obtiene es la información del vehículo seleccionado.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "patent": {
+                                        "type": "string",
+                                        "description": "Patente del vehículo"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "anio": {
+                                            "type": "integer",
+                                            "description": "Año del vehículo"
+                                        },
+                                        "anio_fac": {
+                                            "type": "integer",
+                                            "description": "Año de fabricación del vehículo"
+                                        },
+                                        "calidad": {
+                                            "type": "string",
+                                            "description": "Calidad del vehículo"
+                                        },
+                                        "cantidad": {
+                                            "type": "integer",
+                                            "description": "Cantidad de vehículos"
+                                        },
+                                        "carga": {
+                                            "type": "string",
+                                            "description": "Carga del vehículo"
+                                        },
+                                        "chasis": {
+                                            "type": "string",
+                                            "description": "Número de chasis del vehículo"
+                                        },
+                                        "color": {
+                                            "type": "string",
+                                            "description": "Color del vehículo"
+                                        },
+                                        "combustible": {
+                                            "type": "string",
+                                            "description": "Tipo de combustible del vehículo"
+                                        },
+                                        "comuna_adquiriente": {
+                                            "type": "string",
+                                            "description": "Comuna de adquisición del vehículo"
+                                        },
+                                        "descripcion_segmento": {
+                                            "type": "string",
+                                            "description": "Descripción del segmento del vehículo"
+                                        },
+                                        "descripcion_tipo": {
+                                            "type": "string",
+                                            "description": "Descripción del tipo de vehículo"
+                                        },
+                                        "dia": {
+                                            "type": "integer",
+                                            "description": "Día de adquisición del vehículo"
+                                        },
+                                        "estado_solicitud": {
+                                            "type": "string",
+                                            "description": "Estado de la solicitud"
+                                        },
+                                        "id_1": {
+                                            "type": "integer",
+                                            "description": "ID 1 del vehículo"
+                                        },
+                                        "id_2": {
+                                            "type": "integer",
+                                            "description": "ID 2 del vehículo"
+                                        },
+                                        "id_3": {
+                                            "type": "integer",
+                                            "description": "ID 3 del vehículo"
+                                        },
+                                        "id_4": {
+                                            "type": "integer",
+                                            "description": "ID 4 del vehículo"
+                                        },
+                                        "id_5": {
+                                            "type": "integer",
+                                            "description": "ID 5 del vehículo"
+                                        },
+                                        "id_rvm": {
+                                            "type": "integer",
+                                            "description": "ID RVM del vehículo"
+                                        },
+                                        "marca": {
+                                            "type": "string",
+                                            "description": "Marca del vehículo"
+                                        },
+                                        "mercado": {
+                                            "type": "string",
+                                            "description": "Mercado del vehículo"
+                                        },
+                                        "mes": {
+                                            "type": "integer",
+                                            "description": "Mes de adquisición del vehículo"
+                                        },
+                                        "modelo": {
+                                            "type": "string",
+                                            "description": "Modelo del vehículo"
+                                        },
+                                        "motor": {
+                                            "type": "string",
+                                            "description": "Número de motor del vehículo"
+                                        },
+                                        "nasientos": {
+                                            "type": "integer",
+                                            "description": "Número de asientos del vehículo"
+                                        },
+                                        "npuertas": {
+                                            "type": "integer",
+                                            "description": "Número de puertas del vehículo"
+                                        },
+                                        "oficina": {
+                                            "type": "string",
+                                            "description": "Oficina relacionada al vehículo"
+                                        },
+                                        "pais": {
+                                            "type": "null",
+                                            "description": "País del vehículo"
+                                        },
+                                        "patente": {
+                                            "type": "string",
+                                            "description": "Patente del vehículo"
+                                        },
+                                        "pbv": {
+                                            "type": "string",
+                                            "description": "Peso bruto vehicular"
+                                        },
+                                        "pbvk": {
+                                            "type": "string",
+                                            "description": "PBVK del vehículo"
+                                        },
+                                        "prenda": {
+                                            "type": "string",
+                                            "description": "Prenda del vehículo"
+                                        },
+                                        "region_adquiriente": {
+                                            "type": "string",
+                                            "description": "Región de adquisición del vehículo"
+                                        },
+                                        "region_oficina": {
+                                            "type": "string",
+                                            "description": "Región de la oficina relacionada"
+                                        },
+                                        "segmento_pesados": {
+                                            "type": "string",
+                                            "description": "Segmento de vehículos pesados"
+                                        },
+                                        "semana": {
+                                            "type": "string",
+                                            "description": "Semana de adquisición del vehículo"
+                                        },
+                                        "tipo_original": {
+                                            "type": "string",
+                                            "description": "Tipo original del vehículo"
+                                        },
+                                        "tipo_vehiculo": {
+                                            "type": "string",
+                                            "description": "Tipo de vehículo"
+                                        },
+                                        "total_cantidad": {
+                                            "type": "string",
+                                            "description": "Total de cantidad de vehículos"
+                                        },
+                                        "version_modelo": {
+                                            "type": "string",
+                                            "description": "Versión del modelo del vehículo"
+                                        },
+                                        "vin": {
+                                            "type": "string",
+                                            "description": "Número de identificación del vehículo (VIN)"
+                                        },
+                                        "zona": {
+                                            "type": "string",
+                                            "description": "Zona del vehículo"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Mensaje que indica que el recurso no fue encontrado"
+                                        }
+                                    },
+                                    "example": {
+                                        "message": "Recurso no encontrado"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+
+
+
+
+        "/login": {
+            "post": {
+                "tags": [""],
+                "summary": "Resumen de la operación POST para /login",
+                "requestBody": {
+                    "description": "Logeo de usuario",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "description": "email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "password"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "anio": {
+                                            "type": "integer",
+                                            "description": "Año del vehículo"
+                                        },
+                                        "anio_fac": {
+                                            "type": "integer",
+                                            "description": "Año de fabricación del vehículo"
+                                        },
+                                        "calidad": {
+                                            "type": "string",
+                                            "description": "Calidad del vehículo"
+                                        },
+                                        "cantidad": {
+                                            "type": "integer",
+                                            "description": "Cantidad de vehículos"
+                                        },
+                                        "carga": {
+                                            "type": "string",
+                                            "description": "Carga del vehículo"
+                                        },
+                                        "chasis": {
+                                            "type": "string",
+                                            "description": "Número de chasis del vehículo"
+                                        },
+                                        "color": {
+                                            "type": "string",
+                                            "description": "Color del vehículo"
+                                        },
+                                        "combustible": {
+                                            "type": "string",
+                                            "description": "Tipo de combustible del vehículo"
+                                        },
+                                        "comuna_adquiriente": {
+                                            "type": "string",
+                                            "description": "Comuna de adquisición del vehículo"
+                                        },
+                                        "descripcion_segmento": {
+                                            "type": "string",
+                                            "description": "Descripción del segmento del vehículo"
+                                        },
+                                        "descripcion_tipo": {
+                                            "type": "string",
+                                            "description": "Descripción del tipo de vehículo"
+                                        },
+                                        "dia": {
+                                            "type": "integer",
+                                            "description": "Día de adquisición del vehículo"
+                                        },
+                                        "estado_solicitud": {
+                                            "type": "string",
+                                            "description": "Estado de la solicitud"
+                                        },
+                                        "id_1": {
+                                            "type": "integer",
+                                            "description": "ID 1 del vehículo"
+                                        },
+                                        "id_2": {
+                                            "type": "integer",
+                                            "description": "ID 2 del vehículo"
+                                        },
+                                        "id_3": {
+                                            "type": "integer",
+                                            "description": "ID 3 del vehículo"
+                                        },
+                                        "id_4": {
+                                            "type": "integer",
+                                            "description": "ID 4 del vehículo"
+                                        },
+                                        "id_5": {
+                                            "type": "integer",
+                                            "description": "ID 5 del vehículo"
+                                        },
+                                        "id_rvm": {
+                                            "type": "integer",
+                                            "description": "ID RVM del vehículo"
+                                        },
+                                        "marca": {
+                                            "type": "string",
+                                            "description": "Marca del vehículo"
+                                        },
+                                        "mercado": {
+                                            "type": "string",
+                                            "description": "Mercado del vehículo"
+                                        },
+                                        "mes": {
+                                            "type": "integer",
+                                            "description": "Mes de adquisición del vehículo"
+                                        },
+                                        "modelo": {
+                                            "type": "string",
+                                            "description": "Modelo del vehículo"
+                                        },
+                                        "motor": {
+                                            "type": "string",
+                                            "description": "Número de motor del vehículo"
+                                        },
+                                        "nasientos": {
+                                            "type": "integer",
+                                            "description": "Número de asientos del vehículo"
+                                        },
+                                        "npuertas": {
+                                            "type": "integer",
+                                            "description": "Número de puertas del vehículo"
+                                        },
+                                        "oficina": {
+                                            "type": "string",
+                                            "description": "Oficina relacionada al vehículo"
+                                        },
+                                        "pais": {
+                                            "type": "null",
+                                            "description": "País del vehículo"
+                                        },
+                                        "patente": {
+                                            "type": "string",
+                                            "description": "Patente del vehículo"
+                                        },
+                                        "pbv": {
+                                            "type": "string",
+                                            "description": "Peso bruto vehicular"
+                                        },
+                                        "pbvk": {
+                                            "type": "string",
+                                            "description": "PBVK del vehículo"
+                                        },
+                                        "prenda": {
+                                            "type": "string",
+                                            "description": "Prenda del vehículo"
+                                        },
+                                        "region_adquiriente": {
+                                            "type": "string",
+                                            "description": "Región de adquisición del vehículo"
+                                        },
+                                        "region_oficina": {
+                                            "type": "string",
+                                            "description": "Región de la oficina relacionada"
+                                        },
+                                        "segmento_pesados": {
+                                            "type": "string",
+                                            "description": "Segmento de vehículos pesados"
+                                        },
+                                        "semana": {
+                                            "type": "string",
+                                            "description": "Semana de adquisición del vehículo"
+                                        },
+                                        "tipo_original": {
+                                            "type": "string",
+                                            "description": "Tipo original del vehículo"
+                                        },
+                                        "tipo_vehiculo": {
+                                            "type": "string",
+                                            "description": "Tipo de vehículo"
+                                        },
+                                        "total_cantidad": {
+                                            "type": "string",
+                                            "description": "Total de cantidad de vehículos"
+                                        },
+                                        "version_modelo": {
+                                            "type": "string",
+                                            "description": "Versión del modelo del vehículo"
+                                        },
+                                        "vin": {
+                                            "type": "string",
+                                            "description": "Número de identificación del vehículo (VIN)"
+                                        },
+                                        "zona": {
+                                            "type": "string",
+                                            "description": "Zona del vehículo"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Mensaje que indica que el recurso no fue encontrado"
+                                        }
+                                    },
+                                    "example": {
+                                        "message": "Recurso no encontrado"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+    }
+}
