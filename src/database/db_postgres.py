@@ -7,15 +7,15 @@ from urllib.parse import quote_plus
 
 Base = declarative_base()
 
-POSTGRES_HOST = config_environment('POSTGRES_HOST')
-POSTGRES_USER = config_environment('POSTGRES_USER')
-POSTGRES_PASSWORD = config_environment('POSTGRES_PASSWORD')
-POSTGRES_PORT = config_environment('POSTGRES_PORT')
-POSTGRES_DB = config_environment('POSTGRES_DB')
+HOST = config_environment('HOST')
+USER = config_environment('USER')
+PASSWORD = config_environment('PASSWORD')
+PORT = config_environment('PORT')
+DB = config_environment('DB')
 
-encoded_password = quote_plus(POSTGRES_PASSWORD)
+encoded_password = quote_plus(PASSWORD)
 
-connection_string = f"postgresql://{POSTGRES_USER}:{encoded_password}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+connection_string = f"postgresql://{USER}:{encoded_password}@{HOST}:{PORT}/{DB}"
 engine = create_engine(connection_string)
 
 Session = sessionmaker(bind=engine)

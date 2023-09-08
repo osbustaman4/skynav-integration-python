@@ -1,13 +1,20 @@
-from decouple import config
-import pymysql
+from decouple import config as config_environment
 
-def get_connection():
-    try:
-        return pymysql.connect(
-            host=config('MYSQL_HOST'),
-            user=config('MYSQL_USER'),
-            password=config('MYSQL_PASSWORD'),
-            db=config('MYSQL_DB'),
-        )
-    except Exception as ex:
-        print(ex)
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from urllib.parse import quote_plus
+
+Base = declarative_base()
+
+HOST = config_environment('HOST')
+USER = config_environment('USER')
+PASSWORD = config_environment('PASSWORD')
+PORT = config_environment('PORT')
+DB = config_environment('DB') 
+
+encoded_password = quote_plus(PASSWORD)
+connection_string = f"mysql://{USER}:{encoded_password}@{HOST}:{PORT}/{DB}"
+engine = create_engine(connection_string, pool_pre_ping=True)
+Session = sessionmaker(bind=engine)
+
