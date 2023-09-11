@@ -49,3 +49,5 @@ ENVIRONMENTS = "desarrollo|produccion"
 SECRET_KEY = ""
 EXPIRE_DATE = ""
 ```
+
+3. Crear el archivo .env dentro de la raiz del proyecto.
