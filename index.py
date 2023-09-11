@@ -11,9 +11,8 @@ app = init_app(configuration)
 # Agregar esta línea para definir la variable 'application'
 application = app
 
-
 task_001 = BackgroundScheduler()
-task_001.add_job(Cron.task_IntegrationGPS, 'interval', seconds=10)  # Reemplaza N con la cantidad de segundos deseados
+task_001.add_job(Cron.task_IntegrationGPS, 'interval', seconds=10) 
 task_001.start()
 
 if __name__ == '__main__':
