@@ -32,4 +32,20 @@ Werkzeug==2.3.7
 
 2. Crear el archivo .env dentro de la raiz del proyecto.
 
-```sudo chmod -R 777 skynav-integration-python```
+```sudo nano .env```
+
+dentro del archivo se debe agregar los siguiente:
+
+```
+HOST_API = 'https://host_donde_el_servidor'
+HOST = 'ip_host'
+USER = ''
+PASSWORD = ''
+PORT = N° de puerto
+DB = ''
+USER_QUERY = 'usuario con el que se ejcutara'
+LOG_DIRECTORY = ''
+ENVIRONMENTS = "desarrollo|produccion"
+SECRET_KEY = ""
+EXPIRE_DATE = ""
+```
