@@ -2,7 +2,7 @@
 
 > instalar dependencias con el comnado
 
-+ pip instal requirements.txt
+    pip instal requirements.txt
 
 + bcrypt==4.0.1
 + blinker==1.6.2
